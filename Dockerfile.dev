@@ -1,0 +1,17 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# 先只複製 package 檔，讓安裝可被快取
+COPY package.json package-lock.json* yarn.lock* pnpm-lock.yaml* ./
+
+RUN \
+  if [ -f package-lock.json ]; then npm ci; \
+  elif [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+  elif [ -f pnpm-lock.yaml ]; then corepack enable && pnpm i --frozen-lockfile; \
+  else npm i; fi
+
+# dev 會用 volume 掛載整個專案，所以這邊不用 COPY . .
+EXPOSE 3000
+
+CMD ["npm", "run", "dev", "--", "-p", "3000", "-H", "0.0.0.0"]

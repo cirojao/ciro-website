@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  web-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      # 某些環境（特別是 Windows/WSL/部分雲端 dev）檔案監聽不穩時可開啟：
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - .:/app
+      # 避免 host 的 node_modules 覆蓋 container 的 node_modules
+      - /app/node_modules
+      - /app/.next
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
