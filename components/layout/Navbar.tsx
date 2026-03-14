@@ -29,25 +29,25 @@ export default function Navbar() {
   return (
     <header
       className={clsx(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        "fixed top-0 right-0 left-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-cream/90 backdrop-blur-md shadow-warm border-b border-warm-200/60"
+          ? "bg-cream/90 shadow-warm backdrop-blur-md"
           : "bg-transparent",
       )}
     >
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-2">
-          <span className="w-8 h-8 rounded-full bg-espresso flex items-center justify-center text-cream text-sm font-display font-bold transition-transform group-hover:rotate-12 duration-300">
+          <span className="bg-espresso text-cream font-display flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition-transform duration-300 group-hover:rotate-12">
             C
           </span>
-          <span className="font-display text-espresso font-bold tracking-wide hidden sm:block">
+          <span className="font-display text-espresso hidden font-bold tracking-wide sm:block">
             Ciro
           </span>
         </Link>
 
         {/* 桌面選單 */}
-        <ul className="hidden md:flex items-center gap-2">
+        <ul className="hidden items-center gap-2 md:flex">
           {navLinks.map(({ href, label }) => {
             const active = pathname === href;
             return (
@@ -55,9 +55,9 @@ export default function Navbar() {
                 <Link
                   href={href}
                   className={clsx(
-                    "group relative  text-sm font-display transition-colors duration-200 rounded-sm inline-block text-center",
+                    "group font-display relative inline-block rounded-sm text-center text-sm transition-colors duration-200",
                     active
-                      ? "text-espresso font-semibold "
+                      ? "text-espresso font-semibold"
                       : "text-warm-800 hover:text-espresso",
                   )}
                   onClick={(e) => {
@@ -66,7 +66,7 @@ export default function Navbar() {
                   }}
                 >
                   <span
-                    className="block font-semibold invisible h-0 overflow-hidden"
+                    className="invisible block h-0 overflow-hidden font-semibold"
                     aria-hidden
                   >
                     {label}
@@ -75,7 +75,7 @@ export default function Navbar() {
                   {/* 底線：active 時全寬，hover 時從左長出 */}
                   <span
                     className={clsx(
-                      "absolute -bottom-1 left-0 h-px bg-espresso transition-transform duration-300 origin-left w-full",
+                      "bg-espresso absolute -bottom-1 left-0 h-px w-full origin-left transition-transform duration-300",
                       active
                         ? "scale-x-100"
                         : "scale-x-0 group-hover:scale-x-100",
@@ -89,9 +89,9 @@ export default function Navbar() {
         <ThemeToggle />
 
         {/* 手機右側：ThemeToggle + 選單按鈕 */}
-        <div className="md:hidden flex items-center gap-1">
+        <div className="flex items-center gap-1 md:hidden">
           <button
-            className="p-2 text-warm-800 hover:text-espresso"
+            className="text-warm-800 hover:text-espresso p-2"
             onClick={() => setOpen(!open)}
             aria-label="選單"
           >
@@ -119,9 +119,9 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-cream/95 backdrop-blur-md border-t border-warm-200 shadow-warm-lg"
+            className="bg-cream/95 border-warm-200 shadow-warm-lg overflow-hidden border-t backdrop-blur-md md:hidden"
           >
-            <div className="px-6 py-4 flex flex-col gap-1">
+            <div className="flex flex-col gap-1 px-6 py-4">
               {navLinks.map(({ href, label }, i) => {
                 const active = pathname === href;
                 return (
@@ -134,7 +134,7 @@ export default function Navbar() {
                     <Link
                       href={href}
                       className={clsx(
-                        "block px-4 py-3 rounded-xl text-sm font-medium transition-colors",
+                        "block rounded-xl px-4 py-3 text-sm font-medium transition-colors",
                         active
                           ? "bg-warm-200 text-espresso font-semibold"
                           : "text-warm-800 hover:bg-warm-100",
