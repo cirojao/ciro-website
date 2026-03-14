@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap");
+
 @import "tailwindcss";
 
-@theme {
+/* 亮色（預設） */
+:root {
   --color-warm-50: #ffffff;
   --color-warm-100: #f8f9fa;
   --color-warm-200: #e9ecef;
@@ -14,8 +17,53 @@
 
   --color-espresso: #1a1a2e;
   --color-espresso-light: #2d2d44;
-  --color-cream: #e3e3e3;
+  --color-cream: #ffffff;
   --color-cream-dark: #f1f3f5;
+
+  --shadow-warm: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --shadow-warm-lg: 0 8px 48px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* 深色 — html 加上 .dark 時覆蓋變數 */
+html.dark {
+  --color-warm-50: #0f1011;
+  --color-warm-100: #1a1d20;
+  --color-warm-200: #25292d;
+  --color-warm-300: #343a40;
+  --color-warm-400: #495057;
+  --color-warm-500: #868e96;
+  --color-warm-600: #adb5bd;
+  --color-warm-700: #ced4da;
+  --color-warm-800: #e9ecef;
+  --color-warm-900: #f8f9fa;
+
+  --color-espresso: #e2e8f0;
+  --color-espresso-light: #cbd5e1;
+  --color-cream: #0f1011;
+  --color-cream-dark: #1a1d20;
+
+  --shadow-warm: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --shadow-warm-lg: 0 8px 48px rgba(0, 0, 0, 0.55);
+  --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.45);
+}
+
+@theme inline {
+  --color-warm-50: var(--color-warm-50);
+  --color-warm-100: var(--color-warm-100);
+  --color-warm-200: var(--color-warm-200);
+  --color-warm-300: var(--color-warm-300);
+  --color-warm-400: var(--color-warm-400);
+  --color-warm-500: var(--color-warm-500);
+  --color-warm-600: var(--color-warm-600);
+  --color-warm-700: var(--color-warm-700);
+  --color-warm-800: var(--color-warm-800);
+  --color-warm-900: var(--color-warm-900);
+
+  --color-espresso: var(--color-espresso);
+  --color-espresso-light: var(--color-espresso-light);
+  --color-cream: var(--color-cream);
+  --color-cream-dark: var(--color-cream-dark);
 
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "DM Sans", sans-serif;
@@ -23,9 +71,9 @@
 
   --animate-float: float 6s ease-in-out infinite;
 
-  --shadow-warm: 0 4px 24px rgba(0, 0, 0, 0.06);
-  --shadow-warm-lg: 0 8px 48px rgba(0, 0, 0, 0.1);
-  --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.08);
+  --shadow-warm: var(--shadow-warm);
+  --shadow-warm-lg: var(--shadow-warm-lg);
+  --shadow-card: var(--shadow-card);
 }
 
 @keyframes float {
@@ -35,5 +83,52 @@
   }
   50% {
     transform: translateY(-12px);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-espresso);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-warm-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-warm-400);
+  border-radius: 3px;
+}
+
+::selection {
+  background-color: var(--color-warm-300);
+  color: var(--color-espresso);
+}
+
+@layer utilities {
+  .scrollbar-hidden {
+    scrollbar-width: 0px; /* Firefox */
+    -ms-overflow-style: none; /* IE / Edge */
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* Chrome / Safari */
   }
 }

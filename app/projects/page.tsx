@@ -32,7 +32,7 @@ const projects = [
     demo: "https://example.com",
   },
   {
-    id: "dashboard",
+    id: "sport",
     title: "數據分析儀表板",
     period: "2023",
     type: "前端應用",
@@ -52,7 +52,7 @@ const projects = [
     demo: "https://example.com",
   },
   {
-    id: "design-system",
+    id: "wallet",
     title: "企業元件庫",
     period: "2022",
     type: "開源 Library",

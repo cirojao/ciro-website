@@ -21,7 +21,7 @@ const socials = [
     icon: Linkedin,
     href: "https://linkedin.com",
     label: "LinkedIn",
-    user: "陳建宏",
+    user: "Ciro",
   },
   {
     icon: Twitter,

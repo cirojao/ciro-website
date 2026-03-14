@@ -1,27 +1,27 @@
 const skills = [
   {
     category: "前端框架",
-    items: ["React 18", "Next.js 14", "Vue 3", "Nuxt 3"],
+    items: ["React", "Next.js"],
   },
   {
     category: "語言",
-    items: ["TypeScript", "JavaScript ES2024", "HTML5", "CSS3"],
+    items: ["TypeScript", "JavaScript ES6+", "HTML5", "CSS3"],
   },
   {
     category: "樣式",
-    items: ["Tailwind CSS", "CSS Modules", "Framer Motion", "SCSS"],
+    items: ["Tailwind CSS", "CSS Modules", "MUI", "Bootstrap", "Shadcn/ui"],
   },
   {
-    category: "工具鏈",
-    items: ["Vite", "Webpack", "Turbopack", "ESLint", "Prettier"],
+    category: "開發工具",
+    items: ["Vite", "ESLint", "Prettier"],
   },
   {
-    category: "後端整合",
-    items: ["Node.js", "tRPC", "GraphQL", "REST API", "Prisma"],
+    category: "請求後端",
+    items: ["GraphQL", "REST API", "tanstack/query"],
   },
   {
-    category: "測試 & CI",
-    items: ["Vitest", "Playwright", "GitHub Actions", "Docker"],
+    category: "Deployment",
+    items: ["GitHub Actions", "Docker", "Firebase Hosting", "GCP Cloud Run"],
   },
 ];
 
@@ -30,11 +30,8 @@ export default function SkillsSnapshot() {
     <section className="py-24 bg-warm-100/60 border-y border-warm-200">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
-          <p className="text-sm font-mono text-warm-500 uppercase tracking-widest mb-2">
-            技術能力
-          </p>
           <h2 className="font-display text-4xl md:text-5xl text-espresso font-bold">
-            我的工具箱
+            技術能力
           </h2>
         </div>
 

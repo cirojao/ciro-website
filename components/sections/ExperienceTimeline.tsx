@@ -1,34 +1,32 @@
 const experiences = [
   {
-    period: "2022 — 現在",
-    role: "資深前端工程師",
-    company: "Acme Tech Co.",
-    desc: "負責主導前端架構升級，將舊有 CRA 專案遷移至 Next.js 14 App Router，效能提升 40%。帶領 3 人小組開發企業內部元件庫。",
-    tags: ["Next.js", "TypeScript", "Radix UI"],
-  },
-  {
-    period: "2020 — 2022",
+    period: "2023 — 現在",
     role: "前端工程師",
-    company: "StartupXYZ",
-    desc: "從零打造 B2B SaaS 前端，導入 TanStack Query 狀態管理，減少 60% 重複請求。",
-    tags: ["React", "TanStack Query", "Chakra UI"],
+    company: "喜馬拉雅科技有限公司",
+    desc: "負責主導前端架構升級，將舊有 CSR 專案遷移至 Next.js 14 App Router；負責多項產品開發，配合需求採用不同技術棧",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind", "Vite", "Firebase"],
   },
+  // {
+  //   period: "2020 — 2022",
+  //   role: "前端工程師",
+  //   company: "StartupXYZ",
+  //   desc: "從零打造 B2B SaaS 前端，導入 TanStack Query 狀態管理，減少 60% 重複請求。",
+  //   tags: ["React", "TanStack Query", "Chakra UI"],
+  // },
+
   {
-    period: "2019 — 2020",
-    role: "初級前端工程師",
-    company: "Digital Agency",
-    desc: "參與多個品牌官網開發，熟悉 Webflow CMS 整合與 GSAP 動畫實作。",
-    tags: ["JavaScript", "GSAP", "Sass"],
+    period: "2021 — 2023",
+    role: "銀行櫃員",
+    company: "華泰銀行&聯邦銀行",
+    desc: "擔任櫃員主任，管理分行現金等。在職期間意識到櫃員並無太多成長性可言，決定轉職成為前端工程師",
+    tags: [],
   },
 ];
 
 export default function ExperienceTimeline() {
   return (
-    <section className="py-24 max-w-6xl mx-auto px-6">
+    <div className="py-24 max-w-6xl mx-auto px-6">
       <div className="text-center mb-14">
-        <p className="text-sm font-mono text-warm-500 uppercase tracking-widest mb-2">
-          工作歷程
-        </p>
         <h2 className="font-display text-4xl md:text-5xl text-espresso font-bold">
           職涯旅程
         </h2>
@@ -80,6 +78,6 @@ export default function ExperienceTimeline() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
