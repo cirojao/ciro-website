@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     description: "專注於打造流暢、優雅使用者體驗的前端工程師",
     type: "website",
   },
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

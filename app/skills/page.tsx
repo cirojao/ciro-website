@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "技術棧 — Ciro",
+  title: "Tech Stacks | Ciro",
   description: "Ciro的前端技術能力總覽",
 };
 

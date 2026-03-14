@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Code2, Coffee, Music, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "關於我 — Ciro",
+  title: "About | Ciro",
   description: "Ciro的背景、興趣與工作哲學",
 };
 

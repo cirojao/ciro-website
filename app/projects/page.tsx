@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Github, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "作品集 — Ciro",
+  title: "Projects | Ciro",
   description: "Ciro的前端開發作品集",
 };
 
