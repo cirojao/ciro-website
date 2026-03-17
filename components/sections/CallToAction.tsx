@@ -16,13 +16,9 @@ export default function CallToAction() {
           <div className="bg-warm-400/10 absolute bottom-0 left-0 h-64 w-64 -translate-x-1/2 translate-y-1/2 rounded-full blur-3xl" />
 
           <div className="relative z-10">
-            <p className="text-warm-400 mb-4 font-mono text-sm tracking-widest uppercase">
-              開放合作
-            </p>
             <h2 className="font-display text-cream mb-6 text-4xl leading-tight font-bold md:text-5xl">
-              讓我們一起
+              開放合作
               <br />
-              <span className="text-warm-400 italic">打造精彩</span>
             </h2>
             <p className="text-warm-300 mx-auto mb-10 max-w-xl text-lg leading-relaxed">
               無論是全職機會、自由接案還是技術顧問，我都很樂意聊聊！

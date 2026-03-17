@@ -33,11 +33,7 @@ export default function SkillsSnapshot() {
   const { ref, opacity, y } = useFadeInView();
 
   return (
-    <motion.section
-      className="bg-warm-100/60 border-warm-200 border-y py-24"
-      ref={ref}
-      style={{ opacity, y }}
-    >
+    <motion.section className="py-24" ref={ref} style={{ opacity, y }}>
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-14 text-center">
           <h2 className="font-display text-espresso text-4xl font-bold md:text-5xl">
