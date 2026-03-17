@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import useFadeInView from "@/hooks/useFadeInView";
 
 const projects = [
   {
@@ -46,35 +47,42 @@ const cardVariants: Variants = {
 };
 
 export default function FeaturedProjects() {
+  const { ref, opacity, y } = useFadeInView();
+
   return (
-    <section className="py-24 max-w-6xl mx-auto px-6">
+    <motion.section
+      className="mx-auto max-w-6xl px-6 py-24"
+      ref={ref}
+      style={{ opacity, y }}
+    >
       {/* 標題 */}
       <motion.div
-        className="flex items-end justify-between mb-12"
+        className="mb-12 flex items-end justify-between"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5 }}
       >
+        <div className="w-20"></div>
         <div>
-          <h2 className="font-display text-4xl md:text-5xl text-espresso font-bold">
+          <h2 className="font-display text-espresso text-4xl font-bold md:text-5xl">
             精選作品
           </h2>
         </div>
         <Link
           href="/projects"
-          className="hidden sm:flex items-center gap-1.5 text-sm text-warm-600 hover:text-espresso transition-colors font-medium group"
+          className="text-warm-600 hover:text-espresso group hidden items-center gap-1.5 text-sm font-medium transition-colors sm:flex"
         >
           查看全部
           <ArrowUpRight
             size={16}
-            className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+            className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
           />
         </Link>
       </motion.div>
 
       {/* 卡片 */}
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid gap-6 md:grid-cols-3">
         {projects.map((p, i) => (
           <motion.div
             key={p.id}
@@ -87,7 +95,7 @@ export default function FeaturedProjects() {
           >
             <Link
               href={`/projects#${p.id}`}
-              className="group flex flex-col rounded-2xl border border-warm-200 bg-warm-50 hover:border-warm-400 hover:shadow-card transition-colors duration-300 overflow-hidden h-full"
+              className="group border-warm-200 bg-warm-50 hover:border-warm-400 hover:shadow-card flex h-full flex-col overflow-hidden rounded-2xl border transition-colors duration-300"
             >
               {/* 彩色頂部 */}
               <div
@@ -101,30 +109,30 @@ export default function FeaturedProjects() {
                 />
               </div>
 
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="font-body text-xl font-semibold text-espresso mb-2 group-hover:text-warm-600 transition-colors">
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-body text-espresso group-hover:text-warm-600 mb-2 text-xl font-semibold transition-colors">
                   {p.title}
                 </h3>
-                <p className="text-sm text-warm-600 leading-relaxed mb-4">
+                <p className="text-warm-600 mb-4 text-sm leading-relaxed">
                   {p.desc}
                 </p>
 
-                <div className="flex flex-wrap gap-1.5 mt-auto">
+                <div className="mt-auto flex flex-wrap gap-1.5">
                   {p.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-0.5 bg-warm-200 text-warm-700 text-xs rounded-full font-mono"
+                      className="bg-warm-200 text-warm-700 rounded-full px-2 py-0.5 font-mono text-xs"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-4 flex items-center gap-1 text-xs text-warm-500 group-hover:text-warm-700 transition-colors">
+                <div className="text-warm-500 group-hover:text-warm-700 mt-4 flex items-center gap-1 text-xs transition-colors">
                   查看詳情{" "}
                   <ArrowUpRight
                     size={12}
-                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                    className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </div>
               </div>
@@ -137,12 +145,12 @@ export default function FeaturedProjects() {
       <div className="mt-8 text-center sm:hidden">
         <Link
           href="/projects"
-          className="inline-flex items-center gap-1.5 text-sm text-warm-600 border border-warm-300 px-6 py-2.5 rounded-full hover:bg-warm-100 transition-colors"
+          className="text-warm-600 border-warm-300 hover:bg-warm-100 inline-flex items-center gap-1.5 rounded-full border px-6 py-2.5 text-sm transition-colors"
         >
           查看全部作品
           <ArrowUpRight size={14} />
         </Link>
       </div>
-    </section>
+    </motion.section>
   );
 }

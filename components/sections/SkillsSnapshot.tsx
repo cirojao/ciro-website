@@ -1,3 +1,7 @@
+"use client";
+import useFadeInView from "@/hooks/useFadeInView";
+import { motion } from "framer-motion";
+
 const skills = [
   {
     category: "前端框架",
@@ -26,29 +30,35 @@ const skills = [
 ];
 
 export default function SkillsSnapshot() {
+  const { ref, opacity, y } = useFadeInView();
+
   return (
-    <section className="py-24 bg-warm-100/60 border-y border-warm-200">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-14">
-          <h2 className="font-display text-4xl md:text-5xl text-espresso font-bold">
+    <motion.section
+      className="bg-warm-100/60 border-warm-200 border-y py-24"
+      ref={ref}
+      style={{ opacity, y }}
+    >
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-14 text-center">
+          <h2 className="font-display text-espresso text-4xl font-bold md:text-5xl">
             技術能力
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((group) => (
             <div
               key={group.category}
-              className="bg-cream rounded-2xl p-6 border border-warm-200 hover:border-warm-400 hover:shadow-card transition-all duration-300"
+              className="bg-cream border-warm-200 hover:border-warm-400 hover:shadow-card rounded-2xl border p-6 transition-all duration-300"
             >
-              <h3 className="text-xs font-mono uppercase tracking-widest text-warm-500 mb-4">
+              <h3 className="text-warm-500 mb-4 font-mono text-xs tracking-widest uppercase">
                 {group.category}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className="px-3 py-1.5 bg-warm-100 border border-warm-200 rounded-lg text-sm text-warm-800 font-medium hover:bg-warm-200 transition-colors cursor-default"
+                    className="bg-warm-100 border-warm-200 text-warm-800 hover:bg-warm-200 cursor-default rounded-lg border px-3 py-1.5 text-sm font-medium transition-colors"
                   >
                     {item}
                   </span>
@@ -58,6 +68,6 @@ export default function SkillsSnapshot() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

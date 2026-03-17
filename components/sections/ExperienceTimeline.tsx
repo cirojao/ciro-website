@@ -1,3 +1,7 @@
+"use client";
+import useFadeInView from "@/hooks/useFadeInView";
+import { motion } from "framer-motion";
+
 const experiences = [
   {
     period: "2023 — 現在",
@@ -24,42 +28,48 @@ const experiences = [
 ];
 
 export default function ExperienceTimeline() {
+  const { ref, opacity, y } = useFadeInView();
+
   return (
-    <div className="py-24 max-w-6xl mx-auto px-6">
-      <div className="text-center mb-14">
-        <h2 className="font-display text-4xl md:text-5xl text-espresso font-bold">
+    <motion.section
+      className="mx-auto max-w-6xl px-6 py-24"
+      ref={ref}
+      style={{ opacity, y }}
+    >
+      <div className="mb-14 text-center">
+        <h2 className="font-display text-espresso text-4xl font-bold md:text-5xl">
           職涯旅程
         </h2>
       </div>
 
-      <div className="relative max-w-3xl mx-auto">
+      <div className="relative mx-auto max-w-3xl">
         {/* 時間軸線 */}
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-warm-300 via-warm-400 to-transparent ml-5" />
+        <div className="from-warm-300 via-warm-400 absolute top-0 bottom-0 left-0 ml-5 w-px bg-gradient-to-b to-transparent" />
 
         <div className="space-y-10">
           {experiences.map((exp, i) => (
             <div key={i} className="relative flex gap-8 pl-14">
               {/* 圓點 */}
-              <div className="absolute left-0 w-10 h-10 rounded-full bg-warm-100 border-2 border-warm-400 flex items-center justify-center text-warm-600 font-mono text-xs font-bold shrink-0">
+              <div className="bg-warm-100 border-warm-400 text-warm-600 absolute left-0 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 font-mono text-xs font-bold">
                 {String(experiences.length - i).padStart(2, "0")}
               </div>
 
-              <div className="bg-warm-50 rounded-2xl border border-warm-200 p-6 flex-1 hover:border-warm-400 hover:shadow-card transition-all duration-300">
-                <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+              <div className="bg-warm-50 border-warm-200 hover:border-warm-400 hover:shadow-card flex-1 rounded-2xl border p-6 transition-all duration-300">
+                <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
                   <div>
-                    <h3 className="font-display text-xl font-semibold text-espresso">
+                    <h3 className="font-display text-espresso text-xl font-semibold">
                       {exp.role}
                     </h3>
-                    <span className="text-warm-600 font-medium text-sm">
+                    <span className="text-warm-600 text-sm font-medium">
                       {exp.company}
                     </span>
                   </div>
-                  <span className="text-xs font-mono text-warm-500 bg-warm-100 border border-warm-200 px-3 py-1 rounded-full whitespace-nowrap">
+                  <span className="text-warm-500 bg-warm-100 border-warm-200 rounded-full border px-3 py-1 font-mono text-xs whitespace-nowrap">
                     {exp.period}
                   </span>
                 </div>
 
-                <p className="text-sm text-warm-600 leading-relaxed mb-4">
+                <p className="text-warm-600 mb-4 text-sm leading-relaxed">
                   {exp.desc}
                 </p>
 
@@ -67,7 +77,7 @@ export default function ExperienceTimeline() {
                   {exp.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-0.5 bg-warm-200 text-warm-700 text-xs rounded-full font-mono"
+                      className="bg-warm-200 text-warm-700 rounded-full px-2.5 py-0.5 font-mono text-xs"
                     >
                       {tag}
                     </span>
@@ -78,6 +88,6 @@ export default function ExperienceTimeline() {
           ))}
         </div>
       </div>
-    </div>
+    </motion.section>
   );
 }
