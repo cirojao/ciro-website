@@ -9,125 +9,80 @@ export const metadata: Metadata = {
 const projects = [
   {
     id: "ecommerce",
-    title: "電商購物平台",
-    period: "2023",
-    type: "全端 Web 應用",
+    title: "野獸國BiBi Store",
+    period: "2025",
+    type: "前端應用",
     emoji: "🛒",
-    desc: "為中小型品牌打造的現代電商解決方案，整合 Stripe 金流、即時庫存管理，支援多幣別與多語言，月均交易量 NT$ 500 萬+。",
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "Stripe",
-      "Prisma",
-      "PostgreSQL",
-      "Tailwind CSS",
-    ],
-    highlights: [
-      "Lighthouse 效能評分 98+",
-      "Core Web Vitals 全綠",
-      "0.3s 首屏載入",
-    ],
+    desc: "野獸國打造的會員系統，包含基本資料更新及優惠券兌換功能。利用GCP cloud run trigger 監聽github上的main分支，自動部署更新。",
+    tags: ["Next.js", , "Tailwind CSS", "MUI", "useContext", "GCP Cloud Run"],
+    highlights: ["自動部署更新"],
     color: "from-warm-200 to-sand-300",
     github: "https://github.com",
     demo: "https://example.com",
   },
   {
     id: "sport",
-    title: "數據分析儀表板",
-    period: "2023",
+    title: "Astrophant sport",
+    period: "2024",
     type: "前端應用",
     emoji: "📊",
-    desc: "為行銷團隊打造的多維度數據可視化平台，支援即時更新、自定義圖表佈局，日活用戶 800+。",
+    desc: "為公司打造的體育平台，包含即時動畫顯示、時間篩選聯賽或賽事資訊以及購物車功能。",
     tags: [
       "React",
-      "D3.js",
-      "Recharts",
+      "TypeScript",
+      "Vite",
+      "Swiperjs",
       "TanStack Query",
-      "WebSocket",
-      "Zustand",
+      "Redux",
+      "RESTful API",
+      "GraphQL API",
+      "Tailwind",
+      "i18n",
     ],
-    highlights: ["即時資料推送", "可拖曳自訂佈局", "匯出 Excel/PDF"],
+    highlights: ["i18n多語系", "即時動畫", "購物車功能", "淺顯易懂的資料結構"],
     color: "from-sand-200 to-warm-300",
     github: "https://github.com",
     demo: "https://example.com",
   },
   {
     id: "wallet",
-    title: "企業元件庫",
-    period: "2022",
-    type: "開源 Library",
+    title: "Quispay",
+    period: "2025",
+    type: "前端應用",
     emoji: "🎨",
-    desc: "基於 Radix UI Primitives 打造，提供 40+ 可無障礙訪問的 UI 元件，完整 Storybook 文件，npm 週下載 1,200+。",
-    tags: [
-      "React",
-      "TypeScript",
-      "Radix UI",
-      "Storybook",
-      "Rollup",
-      "Tailwind",
-    ],
-    highlights: ["WCAG 2.1 AA 合規", "完整 TypeScript 支援", "Dark Mode 支援"],
+    desc: "虛擬貨幣錢包提供資訊、入金、交易記錄等功能",
+    tags: ["React", "Vite", "shadcn/ui", "TanStack Query", "Tailwind"],
+    highlights: ["良好視覺及操作體驗"],
     color: "from-warm-100 to-sand-200",
     github: "https://github.com",
     demo: "https://example.com",
   },
   {
-    id: "cms",
-    title: "無頭 CMS 整合",
-    period: "2022",
-    type: "Web 應用",
-    emoji: "📝",
-    desc: "使用 Next.js App Router 整合 Contentful CMS，搭配 ISR 實現每分鐘內容更新，無需重新部署。",
-    tags: ["Next.js", "Contentful", "ISR", "TypeScript", "GraphQL"],
-    highlights: ["ISR 增量靜態生成", "SEO 最佳化", "多語系 i18n"],
-    color: "from-warm-200 to-warm-300",
-    github: "https://github.com",
-    demo: "https://example.com",
-  },
-  {
-    id: "pwa",
-    title: "PWA 離線行事曆",
-    period: "2021",
-    type: "Progressive Web App",
-    emoji: "📅",
-    desc: "具備離線同步功能的行事曆 PWA，使用 IndexedDB 本地儲存，Service Worker 實現背景同步。",
-    tags: ["React", "PWA", "IndexedDB", "Service Worker", "Workbox"],
-    highlights: ["離線可用", "推播通知", "App Store 上架"],
-    color: "from-sand-100 to-warm-200",
-    github: "https://github.com",
-    demo: "https://example.com",
-  },
-  {
-    id: "ai-chat",
-    title: "AI 客服聊天介面",
-    period: "2024",
-    type: "AI 整合",
-    emoji: "🤖",
-    desc: "整合 OpenAI Streaming API 的客服聊天 UI，支援 Markdown 渲染、程式碼語法高亮與對話歷程管理。",
+    id: "lobby",
+    title: "Betigo",
+    desc: "簡易遊戲大廳，提供各項遊戲入口等",
     tags: [
-      "Next.js",
-      "OpenAI API",
-      "Streaming",
-      "React Markdown",
-      "Vercel AI SDK",
+      "React",
+      "Vite",
+      "Firebase Authentication",
+      "TanStack Query",
+      "Tailwind",
     ],
-    highlights: ["串流即時回應", "程式碼高亮", "多輪對話管理"],
-    color: "from-warm-300 to-sand-300",
-    github: "https://github.com",
-    demo: "https://example.com",
+    emoji: "🎨",
+    type: "前端應用",
+    highlights: ["良好視覺及操作體驗"],
+    color: "from-warm-200 to-warm-400",
+    image: "/images/betigo.png",
   },
 ];
 
 export default function ProjectsPage() {
   return (
-    <div className="pt-24 pb-16 max-w-5xl mx-auto px-6">
+    <div className="mx-auto max-w-5xl px-6 pt-24 pb-16">
       {/* 頁首 */}
       <div className="mb-16">
-        <p className="text-sm font-mono text-warm-500 uppercase tracking-widest mb-3">
-          作品集
-        </p>
-        <h1 className="font-display text-5xl md:text-6xl text-espresso font-bold">
-          我做過什麼
+        <h1 className="font-display text-espresso text-5xl font-bold md:text-6xl">
+          Projects
         </h1>
       </div>
 
@@ -137,30 +92,30 @@ export default function ProjectsPage() {
           <article
             id={project.id}
             key={project.id}
-            className="group bg-warm-50 border border-warm-200 rounded-3xl overflow-hidden hover:border-warm-400 hover:shadow-warm-lg transition-all duration-300"
+            className="group bg-warm-50 border-warm-200 hover:border-warm-400 hover:shadow-warm-lg overflow-hidden rounded-3xl border transition-all duration-300"
           >
             <div className="flex flex-col md:flex-row">
               {/* 左側色塊 */}
               <div
-                className={`md:w-56 h-40 md:h-auto bg-gradient-to-br ${project.color} flex items-center justify-center text-6xl flex-shrink-0`}
+                className={`h-40 bg-gradient-to-br md:h-auto md:w-56 ${project.color} flex flex-shrink-0 items-center justify-center text-6xl`}
               >
                 {project.emoji}
               </div>
 
               {/* 內容 */}
-              <div className="p-6 md:p-8 flex-1">
-                <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+              <div className="flex-1 p-6 md:p-8">
+                <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xs font-mono text-warm-500 uppercase tracking-wider">
+                    <div className="mb-1 flex items-center gap-2">
+                      <span className="text-warm-500 font-mono text-xs tracking-wider uppercase">
                         {project.type}
                       </span>
                       <span className="text-warm-300">·</span>
-                      <span className="text-xs font-mono text-warm-400">
+                      <span className="text-warm-400 font-mono text-xs">
                         {project.period}
                       </span>
                     </div>
-                    <h2 className="font-display text-2xl font-bold text-espresso group-hover:text-warm-600 transition-colors">
+                    <h2 className="font-display text-espresso group-hover:text-warm-600 text-2xl font-bold transition-colors">
                       {project.title}
                     </h2>
                   </div>
@@ -170,7 +125,7 @@ export default function ProjectsPage() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-full border border-warm-300 flex items-center justify-center text-warm-500 hover:text-espresso hover:border-warm-500 transition-all"
+                      className="border-warm-300 text-warm-500 hover:text-espresso hover:border-warm-500 flex h-9 w-9 items-center justify-center rounded-full border transition-all"
                     >
                       <Github size={16} />
                     </a>
@@ -178,25 +133,25 @@ export default function ProjectsPage() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-full border border-warm-300 flex items-center justify-center text-warm-500 hover:text-espresso hover:border-warm-500 transition-all"
+                      className="border-warm-300 text-warm-500 hover:text-espresso hover:border-warm-500 flex h-9 w-9 items-center justify-center rounded-full border transition-all"
                     >
                       <ExternalLink size={16} />
                     </a>
                   </div>
                 </div>
 
-                <p className="text-warm-600 text-sm leading-relaxed mb-4">
+                <p className="text-warm-600 mb-4 text-sm leading-relaxed">
                   {project.desc}
                 </p>
 
                 {/* 亮點 */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="mb-4 flex flex-wrap gap-2">
                   {project.highlights.map((h) => (
                     <span
                       key={h}
-                      className="flex items-center gap-1.5 text-xs text-warm-600 bg-warm-100 border border-warm-200 px-2.5 py-1 rounded-full"
+                      className="text-warm-600 bg-warm-100 border-warm-200 flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-warm-400" />
+                      <span className="bg-warm-400 h-1.5 w-1.5 rounded-full" />
                       {h}
                     </span>
                   ))}
@@ -207,7 +162,7 @@ export default function ProjectsPage() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-0.5 bg-warm-200 text-warm-700 text-xs rounded-full font-mono"
+                      className="bg-warm-200 text-warm-700 rounded-full px-2.5 py-0.5 font-mono text-xs"
                     >
                       {tag}
                     </span>

@@ -23,13 +23,27 @@ const projects = [
     color: "from-warm-100 to-warm-200",
     image: "/images/aplogo.png",
   },
+  // {
+  //   id: "wallet",
+  //   title: "QuisPay",
+  //   desc: "虛擬貨幣錢包提供資訊、入金、交易記錄等功能",
+  //   tags: ["React", "Vite", "shadcn/ui", "TanStack Query", "Tailwind"],
+  //   color: "from-warm-200 to-warm-400",
+  //   image: "/images/quispaylogo.svg",
+  // },
   {
-    id: "wallet",
-    title: "QuisPay",
-    desc: "虛擬貨幣錢包提供資訊、入金、交易記錄等功能",
-    tags: ["React", "Vite", "shadcn/ui", "TanStack Query", "Tailwind"],
+    id: "lobby",
+    title: "Betigo",
+    desc: "簡易遊戲大廳，提供各項遊戲入口等",
+    tags: [
+      "React",
+      "Vite",
+      "Firebase Authentication",
+      "TanStack Query",
+      "Tailwind",
+    ],
     color: "from-warm-200 to-warm-400",
-    image: "/images/quispaylogo.svg",
+    image: "/images/betigo.png",
   },
 ];
 

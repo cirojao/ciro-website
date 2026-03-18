@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Code2, Coffee, Music, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About | Ciro",
@@ -17,85 +18,87 @@ const values = [
     title: "持續學習",
     desc: "前端技術日新月異，我享受這種不斷挑戰自己、追上新知識的過程。",
   },
-  {
-    icon: Music,
-    title: "設計敏感度",
-    desc: "曾修習 UI/UX 課程，理解設計師的思維，讓溝通更高效。",
-  },
+  // {
+  //   icon: Music,
+  //   title: "設計敏感度",
+  //   desc: "曾修習 UI/UX 課程，理解設計師的思維，讓溝通更高效。",
+  // },
 ];
 
 export default function AboutPage() {
   return (
-    <div className="pt-24 pb-16 max-w-4xl mx-auto px-6">
+    <div className="mx-auto max-w-4xl px-6 pt-24 pb-16">
       {/* 頁首 */}
       <div className="mb-16">
-        <p className="text-sm font-mono text-warm-500 uppercase tracking-widest mb-3">
-          About Me
-        </p>
-        <h1 className="font-display text-5xl md:text-6xl text-espresso font-bold mb-6">
-          嗨，我是Ciro 👋
+        <h1 className="font-display text-espresso mb-6 text-5xl font-bold md:text-6xl">
+          Intro
         </h1>
-        <div className="flex items-center gap-2 text-warm-500 text-sm">
+        <div className="text-warm-500 flex items-center gap-2 text-sm">
           <MapPin size={14} />
-          <span>新北市 · 汐止區</span>
+          <span>台北市 · 內湖區</span>
         </div>
       </div>
 
       {/* 主要內容 */}
-      <div className="grid md:grid-cols-5 gap-12 mb-20">
+      <div className="mb-20 grid gap-12 md:grid-cols-5">
         {/* 頭像 */}
         <div className="md:col-span-2">
           <div className="relative">
-            <div className="aspect-square rounded-3xl bg-gradient-to-br from-warm-200 to-sand-300 flex items-center justify-center text-8xl shadow-warm-lg">
-              👨‍💻
+            <div className="from-warm-200 to-sand-300 shadow-warm-lg flex aspect-square items-center justify-center rounded-3xl bg-gradient-to-br text-8xl">
+              <Image
+                src={"/images/ciro.png"}
+                width={200}
+                height={200}
+                alt="ciro"
+              />
             </div>
             {/* 浮動標籤 */}
-            <div className="absolute -bottom-4 -right-4 bg-cream border border-warm-300 rounded-2xl px-4 py-3 shadow-warm">
-              <p className="text-xs text-warm-500 font-mono">經驗</p>
-              <p className="text-2xl font-display font-bold text-espresso">
-                5 年+
+            <div className="bg-cream border-warm-300 shadow-warm absolute -right-4 -bottom-4 rounded-2xl border px-4 py-3">
+              <p className="text-warm-500 font-mono text-xs">經驗</p>
+              <p className="font-display text-espresso text-2xl font-bold">
+                2 Years
               </p>
             </div>
           </div>
         </div>
 
         {/* 文字 */}
-        <div className="md:col-span-3 space-y-5 text-warm-700 leading-relaxed">
-          <p className="text-lg">
-            我是一位擁有{" "}
-            <strong className="text-espresso">5 年前端開發經驗</strong>
-            的工程師， 專注於 React 生態系與現代 Web 技術。
-          </p>
+        <div className="text-warm-700 space-y-5 leading-relaxed md:col-span-3">
           <p>
-            過去在新創與中型科技公司的工作經驗，讓我培養出快速迭代、注重效能優化的工作方式。
+            在新創公司的工作經驗，讓我培養出快速迭代、注重效能優化的工作方式。
             我習慣在開發前先理解商業需求，不只是「把功能做出來」，更在意產品能否真正解決用戶痛點。
           </p>
           <p>
-            閒暇時喜歡貢獻開源專案、寫技術文章，也會參加台北的前端社群 Meetup。
-            最近對 Web Animation API 和 Edge Runtime 特別感興趣。
+            對於React及其相關生態系有一定了解，包含Redux、Next.Js、Vite及TypeScript等。
+            專注於提升使用者體驗、減少網頁渲染次數、提升組件互通性。
+            樂於使用不同技術，用以提升前端技能樹，像最近正在學習使用docker等。
           </p>
-          <p>偶爾也享受沖一杯手沖咖啡，在咖啡館裡讀設計書放空。</p>
+          <p>
+            在團隊中，願意積極溝通，協調設計與後端，促使產品能在期限內上線。
+            <br />
+            如何正確與他人溝通亦成為了重要課題
+          </p>
         </div>
       </div>
 
       {/* 核心價值 */}
       <div className="mb-16">
-        <h2 className="font-display text-3xl text-espresso font-bold mb-8">
+        <h2 className="font-display text-espresso mb-8 text-3xl font-bold">
           工作哲學
         </h2>
-        <div className="grid sm:grid-cols-3 gap-6">
+        <div className="grid gap-6 sm:grid-cols-3">
           {values.map(({ icon: Icon, title, desc }) => (
             <div
               key={title}
-              className="bg-warm-50 border border-warm-200 rounded-2xl p-6 hover:border-warm-400 hover:shadow-card transition-all duration-300"
+              className="bg-warm-50 border-warm-200 hover:border-warm-400 hover:shadow-card rounded-2xl border p-6 transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-xl bg-warm-200 flex items-center justify-center mb-4">
+              <div className="bg-warm-200 mb-4 flex h-10 w-10 items-center justify-center rounded-xl">
                 <Icon size={20} className="text-warm-600" />
               </div>
-              <h3 className="font-display text-lg font-semibold text-espresso mb-2">
+              <h3 className="font-display text-espresso mb-2 text-lg font-semibold">
                 {title}
               </h3>
-              <p className="text-sm text-warm-600 leading-relaxed">{desc}</p>
+              <p className="text-warm-600 text-sm leading-relaxed">{desc}</p>
             </div>
           ))}
         </div>
@@ -103,18 +106,18 @@ export default function AboutPage() {
 
       {/* 學歷 */}
       <div>
-        <h2 className="font-display text-3xl text-espresso font-bold mb-8">
+        <h2 className="font-display text-espresso mb-8 text-3xl font-bold">
           學歷
         </h2>
-        <div className="bg-warm-50 border border-warm-200 rounded-2xl p-6 hover:shadow-card transition-shadow">
+        <div className="bg-warm-50 border-warm-200 hover:shadow-card rounded-2xl border p-6 transition-shadow">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h3 className="font-display text-xl font-semibold text-espresso">
+              <h3 className="font-display text-espresso text-xl font-semibold">
                 財務金融系
               </h3>
               <p className="text-warm-600">實踐大學</p>
             </div>
-            <span className="text-xs font-mono text-warm-500 bg-warm-100 border border-warm-200 px-3 py-1 rounded-full whitespace-nowrap">
+            <span className="text-warm-500 bg-warm-100 border-warm-200 rounded-full border px-3 py-1 font-mono text-xs whitespace-nowrap">
               2015 — 2019
             </span>
           </div>

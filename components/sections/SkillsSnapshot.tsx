@@ -20,7 +20,7 @@ const skills = [
     items: ["Vite", "ESLint", "Prettier"],
   },
   {
-    category: "請求後端",
+    category: "資料串接",
     items: ["GraphQL", "REST API", "tanstack/query"],
   },
   {

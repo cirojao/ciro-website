@@ -12,19 +12,23 @@ const skillGroups = [
     skills: [
       {
         name: "TypeScript",
-        level: 95,
-        desc: "日常主力語言，熟悉泛型、裝飾器、型別體操",
+        level: 60,
+        desc: "基本的型別設立與應用",
       },
       {
         name: "JavaScript",
-        level: 95,
-        desc: "ES2024+，深入理解事件循環、Prototype Chain",
+        level: 85,
+        desc: "熟悉 ES6+、非同步流程、陣列操作與瀏覽器執行邏輯",
       },
-      { name: "HTML5", level: 90, desc: "語意標籤、無障礙 ARIA、SEO 最佳實踐" },
+      {
+        name: "HTML5",
+        level: 80,
+        desc: "理解語意化 HTML、無障礙基本觀念與頁面結構設計與MetaData設定",
+      },
       {
         name: "CSS3",
-        level: 88,
-        desc: "Grid、Flexbox、CSS Variables、Animations",
+        level: 86,
+        desc: "熟悉 Flexbox、Grid、RWD、CSS Variables 與基礎動畫效果",
       },
     ],
   },
@@ -34,59 +38,128 @@ const skillGroups = [
     skills: [
       {
         name: "React",
-        level: 95,
-        desc: "Hooks、Context、Concurrent Mode、Server Components",
+        level: 80,
+        desc: "熟悉 Hooks、元件拆分、狀態管理與效能優化思維",
       },
       {
         name: "Next.js",
-        level: 92,
-        desc: "App Router、Server Actions、Edge Runtime",
+        level: 80,
+        desc: "熟悉 App Router、SSR/SSG、路由規劃與頁面組織",
       },
-      { name: "Vue 3", level: 78, desc: "Composition API、Pinia 狀態管理" },
-      { name: "Nuxt 3", level: 70, desc: "SSR / SSG、模組系統" },
+      {
+        name: "Redux",
+        level: 78,
+        desc: "具備全域狀態管理經驗，理解 reducer、action 與資料流設計",
+      },
+      {
+        name: "Vite",
+        level: 80,
+        desc: "熟悉前端開發環境建置、模組化開發與打包流程",
+      },
     ],
   },
   {
     category: "樣式方案",
     emoji: "🎨",
     skills: [
-      { name: "Tailwind CSS", level: 95, desc: "深度客製化配置、設計系統建置" },
       {
-        name: "Framer Motion",
-        level: 85,
-        desc: "手勢動畫、頁面轉場、Scroll-triggered",
+        name: "Tailwind CSS",
+        level: 86,
+        desc: "主力樣式方案，能快速建立一致的版面與元件樣式",
       },
-      { name: "CSS Modules", level: 88, desc: "作用域隔離、主題切換" },
-      { name: "SCSS / Sass", level: 82, desc: "Mixin、函數、模組化設計" },
+      {
+        name: "CSS Modules",
+        level: 84,
+        desc: "熟悉元件級樣式隔離與大型專案的樣式維護方式",
+      },
+      { name: "SCSS / Sass", level: 60, desc: "了解 SCSS / Sass 基本語法" },
+      {
+        name: "MUI / shadcn/ui",
+        level: 76,
+        desc: "能搭配元件庫加速開發，並依需求客製細節",
+      },
     ],
   },
   {
-    category: "後端 & 資料庫",
+    category: "資料串接",
     emoji: "🔌",
     skills: [
-      { name: "Node.js", level: 78, desc: "Express、Fastify、串流處理" },
-      { name: "tRPC", level: 85, desc: "型別安全的端對端 API 設計" },
-      { name: "GraphQL", level: 75, desc: "Schema 設計、Apollo Client" },
-      { name: "Prisma", level: 72, desc: "ORM 建模、資料庫遷移" },
+      {
+        name: "REST API",
+        level: 85,
+        desc: "熟悉前後端資料串接、錯誤處理與畫面資料狀態整理",
+      },
+      {
+        name: "GraphQL",
+        level: 74,
+        desc: "具備查詢語法、資料結構理解與前端整合經驗",
+      },
+      {
+        name: "TanStack Query",
+        level: 78,
+        desc: "可處理快取、loading/error state 與請求生命週期",
+      },
+    ],
+  },
+  {
+    category: "Firebase",
+    emoji: "🔥",
+    skills: [
+      {
+        name: "Firebase Hosting",
+        level: 72,
+        desc: "具備靜態網站部署、環境設定與 GitHub Actions CI/CD 配置經驗",
+      },
+      {
+        name: "Firebase Authentication",
+        level: 70,
+        desc: "了解登入驗證流程與常見身份驗證整合方式",
+      },
+      {
+        name: "Firebase Messaging",
+        level: 68,
+        desc: "具備基礎推播通知串接與訊息流程理解",
+      },
     ],
   },
   {
     category: "工具 & 測試",
     emoji: "🛠️",
     skills: [
-      { name: "Vitest", level: 82, desc: "單元測試、模擬、覆蓋率報告" },
-      { name: "Playwright", level: 78, desc: "E2E 測試、視覺回歸測試" },
-      { name: "Docker", level: 70, desc: "容器化開發環境、CI 整合" },
-      { name: "GitHub Actions", level: 80, desc: "CI/CD 流程自動化" },
+      {
+        name: "Git / GitHub",
+        level: 86,
+        desc: "日常使用版本控制、分支協作與 PR 流程",
+      },
+      {
+        name: "ESLint / Prettier",
+        level: 84,
+        desc: "維持程式碼風格一致，提升團隊協作與可讀性",
+      },
+      {
+        name: "GitHub Actions",
+        level: 76,
+        desc: "具備基礎 CI/CD 設定經驗，能協助自動化部署流程",
+      },
+      {
+        name: "Vitest",
+        level: 68,
+        desc: "了解基本單元測試撰寫、測試案例設計與測試指令使用",
+      },
+      {
+        name: "Docker",
+        level: 65,
+        desc: "目前持續學習中，已理解基礎容器化開發流程",
+      },
     ],
   },
 ];
 
 function SkillBar({ level }: { level: number }) {
   return (
-    <div className="w-24 h-1.5 bg-warm-200 rounded-full overflow-hidden">
+    <div className="bg-warm-200 h-1.5 w-24 overflow-hidden rounded-full">
       <div
-        className="h-full bg-gradient-to-r from-warm-400 to-warm-600 rounded-full transition-all duration-700"
+        className="from-warm-400 to-warm-600 h-full rounded-full bg-gradient-to-r transition-all duration-700"
         style={{ width: `${level}%` }}
       />
     </div>
@@ -95,14 +168,11 @@ function SkillBar({ level }: { level: number }) {
 
 export default function SkillsPage() {
   return (
-    <div className="pt-24 pb-16 max-w-5xl mx-auto px-6">
+    <div className="mx-auto max-w-5xl px-6 pt-24 pb-16">
       {/* 頁首 */}
       <div className="mb-16">
-        <p className="text-sm font-mono text-warm-500 uppercase tracking-widest mb-3">
-          技術能力
-        </p>
-        <h1 className="font-display text-5xl md:text-6xl text-espresso font-bold">
-          我的工具箱
+        <h1 className="font-display text-espresso text-5xl font-bold md:text-6xl">
+          Tech Stack
         </h1>
       </div>
 
@@ -110,31 +180,31 @@ export default function SkillsPage() {
       <div className="space-y-12">
         {skillGroups.map((group) => (
           <div key={group.category}>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="mb-6 flex items-center gap-3">
               <span className="text-2xl">{group.emoji}</span>
-              <h2 className="font-display text-2xl text-espresso font-semibold">
+              <h2 className="font-display text-espresso text-2xl font-semibold">
                 {group.category}
               </h2>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid gap-4 sm:grid-cols-2">
               {group.skills.map((skill) => (
                 <div
                   key={skill.name}
-                  className="bg-warm-50 border border-warm-200 rounded-2xl p-5 hover:border-warm-400 hover:shadow-card transition-all duration-300 group"
+                  className="bg-warm-50 border-warm-200 hover:border-warm-400 hover:shadow-card group rounded-2xl border p-5 transition-all duration-300"
                 >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-mono font-medium text-espresso">
+                  <div className="mb-2 flex items-center justify-between">
+                    <span className="text-espresso font-mono font-medium">
                       {skill.name}
                     </span>
                     <div className="flex items-center gap-3">
-                      <span className="text-xs text-warm-500 font-mono">
+                      <span className="text-warm-500 font-mono text-xs">
                         {skill.level}%
                       </span>
                       <SkillBar level={skill.level} />
                     </div>
                   </div>
-                  <p className="text-xs text-warm-500 leading-relaxed">
+                  <p className="text-warm-500 text-xs leading-relaxed">
                     {skill.desc}
                   </p>
                 </div>
@@ -145,8 +215,8 @@ export default function SkillsPage() {
       </div>
 
       {/* 其他技能標籤雲 */}
-      <div className="mt-16 p-8 bg-warm-100/60 rounded-3xl border border-warm-200">
-        <h2 className="font-display text-2xl text-espresso font-semibold mb-6">
+      <div className="bg-warm-100/60 border-warm-200 mt-16 rounded-3xl border p-8">
+        <h2 className="font-display text-espresso mb-6 text-2xl font-semibold">
           其他熟悉工具
         </h2>
         <div className="flex flex-wrap gap-2">
@@ -155,26 +225,16 @@ export default function SkillsPage() {
             "VSCode",
             "Figma",
             "Notion",
-            "Storybook",
             "Vercel",
-            "Netlify",
-            "Cloudflare Workers",
-            "Redis",
-            "PostgreSQL",
-            "Supabase",
-            "Stripe",
-            "Zod",
-            "React Hook Form",
-            "Zustand",
-            "Jotai",
-            "SWR",
-            "TanStack Query",
             "Radix UI",
             "shadcn/ui",
+            "sweetalert2",
+            "swiperjs",
+            "motions",
           ].map((item) => (
             <span
               key={item}
-              className="px-3 py-1.5 bg-cream border border-warm-200 rounded-full text-sm text-warm-700 font-medium hover:border-warm-400 hover:bg-warm-50 transition-colors cursor-default"
+              className="bg-cream border-warm-200 text-warm-700 hover:border-warm-400 hover:bg-warm-50 cursor-default rounded-full border px-3 py-1.5 text-sm font-medium transition-colors"
             >
               {item}
             </span>
