@@ -94,7 +94,6 @@ export default function FeaturedProjects() {
           />
         </Link>
       </motion.div>
-
       {/* 卡片 */}
       <div className="grid gap-6 md:grid-cols-3">
         {projects.map((p, i) => (
