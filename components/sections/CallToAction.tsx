@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { LuArrowRight } from "react-icons/lu";
 import useFadeInView from "@/hooks/useFadeInView";
 
 export default function CallToAction() {
@@ -30,7 +30,7 @@ export default function CallToAction() {
                 className="bg-warm-500 hover:bg-warm-400 text-cream shadow-warm group inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 font-medium transition-all duration-200"
               >
                 寫信給我
-                <ArrowRight
+                <LuArrowRight
                   size={16}
                   className="transition-transform group-hover:translate-x-1"
                 />

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { LuMenu, LuX } from "react-icons/lu";
 import { motion, AnimatePresence } from "framer-motion";
 import clsx from "clsx";
 import ThemeToggle from "@/components/ui/ThemeToggle";
@@ -104,7 +104,7 @@ export default function Navbar() {
                 transition={{ duration: 0.15 }}
                 className="block"
               >
-                {open ? <X size={22} /> : <Menu size={22} />}
+                {open ? <LuX size={22} /> : <LuMenu size={22} />}
               </motion.span>
             </AnimatePresence>
           </button>

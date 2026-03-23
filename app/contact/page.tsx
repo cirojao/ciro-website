@@ -1,39 +1,32 @@
 "use client";
 
 import { useState } from "react";
+import { BiLogoLinkedin } from "react-icons/bi";
+import { SiGithub } from "react-icons/si";
 import {
-  Mail,
-  Github,
-  Linkedin,
-  Twitter,
-  Send,
-  CheckCircle,
-} from "lucide-react";
+  MdMailOutline,
+  MdOutlineCheckCircle,
+  MdOutlineSend,
+} from "react-icons/md";
 
 const socials = [
   {
-    icon: Github,
-    href: "https://github.com",
+    icon: SiGithub,
+    href: "https://github.com/cirojao",
     label: "GitHub",
-    user: "@chenjh",
+    user: "@cirojao",
   },
   {
-    icon: Linkedin,
-    href: "https://linkedin.com",
+    icon: BiLogoLinkedin,
+    href: "https://www.linkedin.com/in/ciro-jao",
     label: "LinkedIn",
     user: "Ciro",
   },
   {
-    icon: Twitter,
-    href: "https://twitter.com",
-    label: "Twitter",
-    user: "@chenjh_dev",
-  },
-  {
-    icon: Mail,
-    href: "mailto:hello@example.com",
+    icon: MdMailOutline,
+    href: "mailto:ciroxjao@gmail.com",
     label: "Email",
-    user: "hello@example.com",
+    user: "ciroxjao@gmail.com",
   },
 ];
 
@@ -64,25 +57,22 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-24 pb-16 max-w-5xl mx-auto px-6">
+    <div className="mx-auto max-w-5xl px-6 pt-24 pb-16">
       {/* 頁首 */}
       <div className="mb-16">
-        <p className="text-sm font-mono text-warm-500 uppercase tracking-widest mb-3">
+        <h1 className="font-display text-espresso text-5xl font-bold md:text-6xl">
           Contact
-        </p>
-        <h1 className="font-display text-5xl md:text-6xl text-espresso font-bold">
-          聯絡我
         </h1>
-        <p className="mt-4 text-warm-600 text-lg max-w-xl leading-relaxed">
+        <p className="text-warm-600 mt-4 max-w-xl text-lg leading-relaxed">
           有合作機會、技術問題，或只是想聊聊前端？都歡迎寫信給我！ 通常在 24
           小時內回覆。
         </p>
       </div>
 
-      <div className="grid md:grid-cols-5 gap-12">
+      <div className="grid gap-12 md:grid-cols-5">
         {/* 社群連結 */}
-        <div className="md:col-span-2 space-y-4">
-          <h2 className="font-display text-xl text-espresso font-semibold mb-6">
+        <div className="space-y-4 md:col-span-2">
+          <h2 className="font-display text-espresso mb-6 text-xl font-semibold">
             找到我
           </h2>
           {socials.map(({ icon: Icon, href, label, user }) => (
@@ -91,40 +81,40 @@ export default function ContactPage() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 bg-warm-50 border border-warm-200 rounded-2xl hover:border-warm-400 hover:shadow-card transition-all duration-200 group"
+              className="bg-warm-50 border-warm-200 hover:border-warm-400 hover:shadow-card group flex items-center gap-4 rounded-2xl border p-4 transition-all duration-200"
             >
-              <div className="w-10 h-10 rounded-xl bg-warm-200 flex items-center justify-center text-warm-600 group-hover:bg-warm-300 transition-colors">
+              <div className="bg-warm-200 text-warm-600 group-hover:bg-warm-300 flex h-10 w-10 items-center justify-center rounded-xl transition-colors">
                 <Icon size={18} />
               </div>
               <div>
-                <p className="text-sm font-medium text-espresso">{label}</p>
-                <p className="text-xs text-warm-500">{user}</p>
+                <p className="text-espresso text-sm font-medium">{label}</p>
+                <p className="text-warm-500 text-xs">{user}</p>
               </div>
             </a>
           ))}
 
           {/* 現況提示 */}
-          <div className="mt-8 p-4 bg-green-50 border border-green-200 rounded-2xl">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+          {/* <div className="mt-8 rounded-2xl border border-green-200 bg-green-50 p-4">
+            <div className="mb-2 flex items-center gap-2">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
               <span className="text-sm font-medium text-green-700">
                 目前開放機會
               </span>
             </div>
-            <p className="text-xs text-green-600 leading-relaxed">
+            <p className="text-xs leading-relaxed text-green-600">
               正在尋找前端工程師或技術顧問職位，歡迎洽談！
             </p>
-          </div>
+          </div> */}
         </div>
 
         {/* 聯絡表單 */}
         <div className="md:col-span-3">
           {submitted ? (
-            <div className="h-full flex flex-col items-center justify-center text-center py-16">
-              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
-                <CheckCircle size={32} className="text-green-600" />
+            <div className="flex h-full flex-col items-center justify-center py-16 text-center">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+                <MdOutlineCheckCircle size={32} className="text-green-600" />
               </div>
-              <h3 className="font-display text-2xl text-espresso font-bold mb-3">
+              <h3 className="font-display text-espresso mb-3 text-2xl font-bold">
                 訊息已送出！
               </h3>
               <p className="text-warm-500 text-sm">
@@ -135,16 +125,16 @@ export default function ContactPage() {
                   setSubmitted(false);
                   setForm({ name: "", email: "", subject: "", message: "" });
                 }}
-                className="mt-6 text-sm text-warm-500 hover:text-espresso transition-colors underline"
+                className="text-warm-500 hover:text-espresso mt-6 text-sm underline transition-colors"
               >
                 再寄一封
               </button>
             </div>
           ) : (
             <div className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="block text-xs font-mono text-warm-500 uppercase tracking-wider mb-2">
+                  <label className="text-warm-500 mb-2 block font-mono text-xs tracking-wider uppercase">
                     姓名 *
                   </label>
                   <input
@@ -152,11 +142,11 @@ export default function ContactPage() {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="您的姓名"
-                    className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-xl text-sm text-espresso placeholder-warm-400 focus:outline-none focus:border-warm-500 focus:ring-2 focus:ring-warm-200 transition-all"
+                    className="bg-warm-50 border-warm-200 text-espresso placeholder-warm-400 focus:border-warm-500 focus:ring-warm-200 w-full rounded-xl border px-4 py-3 text-sm transition-all focus:ring-2 focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono text-warm-500 uppercase tracking-wider mb-2">
+                  <label className="text-warm-500 mb-2 block font-mono text-xs tracking-wider uppercase">
                     Email *
                   </label>
                   <input
@@ -165,20 +155,20 @@ export default function ContactPage() {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-xl text-sm text-espresso placeholder-warm-400 focus:outline-none focus:border-warm-500 focus:ring-2 focus:ring-warm-200 transition-all font-mono"
+                    className="bg-warm-50 border-warm-200 text-espresso placeholder-warm-400 focus:border-warm-500 focus:ring-warm-200 w-full rounded-xl border px-4 py-3 font-mono text-sm transition-all focus:ring-2 focus:outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-warm-500 uppercase tracking-wider mb-2">
+                <label className="text-warm-500 mb-2 block font-mono text-xs tracking-wider uppercase">
                   主題
                 </label>
                 <select
                   name="subject"
                   value={form.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-xl text-sm text-espresso focus:outline-none focus:border-warm-500 focus:ring-2 focus:ring-warm-200 transition-all appearance-none"
+                  className="bg-warm-50 border-warm-200 text-espresso focus:border-warm-500 focus:ring-warm-200 w-full appearance-none rounded-xl border px-4 py-3 text-sm transition-all focus:ring-2 focus:outline-none"
                 >
                   <option value="">請選擇...</option>
                   <option value="job">全職工作機會</option>
@@ -190,7 +180,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-warm-500 uppercase tracking-wider mb-2">
+                <label className="text-warm-500 mb-2 block font-mono text-xs tracking-wider uppercase">
                   訊息 *
                 </label>
                 <textarea
@@ -199,23 +189,23 @@ export default function ContactPage() {
                   onChange={handleChange}
                   rows={6}
                   placeholder="告訴我您的想法或需求..."
-                  className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-xl text-sm text-espresso placeholder-warm-400 focus:outline-none focus:border-warm-500 focus:ring-2 focus:ring-warm-200 transition-all resize-none leading-relaxed"
+                  className="bg-warm-50 border-warm-200 text-espresso placeholder-warm-400 focus:border-warm-500 focus:ring-warm-200 w-full resize-none rounded-xl border px-4 py-3 text-sm leading-relaxed transition-all focus:ring-2 focus:outline-none"
                 />
               </div>
 
               <button
                 onClick={handleSubmit}
                 disabled={loading || !form.name || !form.email || !form.message}
-                className="w-full flex items-center justify-center gap-2 px-8 py-3.5 bg-espresso hover:bg-espresso-light disabled:bg-warm-300 disabled:cursor-not-allowed text-cream font-medium rounded-xl transition-all duration-200 shadow-warm hover:shadow-warm-lg"
+                className="bg-espresso hover:bg-espresso-light disabled:bg-warm-300 text-cream shadow-warm hover:shadow-warm-lg flex w-full items-center justify-center gap-2 rounded-xl px-8 py-3.5 font-medium transition-all duration-200 disabled:cursor-not-allowed"
               >
                 {loading ? (
                   <>
-                    <span className="w-4 h-4 border-2 border-cream/40 border-t-cream rounded-full animate-spin" />
+                    <span className="border-cream/40 border-t-cream h-4 w-4 animate-spin rounded-full border-2" />
                     發送中...
                   </>
                 ) : (
                   <>
-                    <Send size={16} />
+                    <MdOutlineSend size={16} />
                     送出訊息
                   </>
                 )}

@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import { LuArrowUpRight } from "react-icons/lu";
 import useFadeInView from "@/hooks/useFadeInView";
 
 const projects = [
@@ -88,7 +88,7 @@ export default function FeaturedProjects() {
           className="text-warm-600 hover:text-espresso group hidden items-center gap-1.5 text-sm font-medium transition-colors sm:flex"
         >
           查看全部
-          <ArrowUpRight
+          <LuArrowUpRight
             size={16}
             className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
           />
@@ -143,7 +143,7 @@ export default function FeaturedProjects() {
 
                 <div className="text-warm-500 group-hover:text-warm-700 mt-4 flex items-center gap-1 text-xs transition-colors">
                   查看詳情{" "}
-                  <ArrowUpRight
+                  <LuArrowUpRight
                     size={12}
                     className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
@@ -161,7 +161,7 @@ export default function FeaturedProjects() {
           className="text-warm-600 border-warm-300 hover:bg-warm-100 inline-flex items-center gap-1.5 rounded-full border px-6 py-2.5 text-sm transition-colors"
         >
           查看全部作品
-          <ArrowUpRight size={14} />
+          <LuArrowUpRight size={14} />
         </Link>
       </div>
     </motion.section>

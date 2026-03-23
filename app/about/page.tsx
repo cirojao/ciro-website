@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Code2, Coffee, Music, MapPin } from "lucide-react";
 import Image from "next/image";
+import { LuCode, LuCoffee, LuMapPin, LuMusic } from "react-icons/lu";
 
 export const metadata: Metadata = {
   title: "About | Ciro",
@@ -9,20 +9,20 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    icon: Code2,
+    icon: LuCode,
     title: "程式即藝術",
     desc: "我相信好的程式碼不只是能運行，更要可讀、可維護，具備優雅的結構。",
   },
   {
-    icon: Coffee,
+    icon: LuCoffee,
     title: "持續學習",
     desc: "前端技術日新月異，我享受這種不斷挑戰自己、追上新知識的過程。",
   },
-  // {
-  //   icon: Music,
-  //   title: "設計敏感度",
-  //   desc: "曾修習 UI/UX 課程，理解設計師的思維，讓溝通更高效。",
-  // },
+  {
+    icon: LuMusic,
+    title: "設計敏感度",
+    desc: "持續與UI/UX設計師溝通，理解設計師的思維，培養自身美感",
+  },
 ];
 
 export default function AboutPage() {
@@ -31,10 +31,10 @@ export default function AboutPage() {
       {/* 頁首 */}
       <div className="mb-16">
         <h1 className="font-display text-espresso mb-6 text-5xl font-bold md:text-6xl">
-          Intro
+          About
         </h1>
         <div className="text-warm-500 flex items-center gap-2 text-sm">
-          <MapPin size={14} />
+          <LuMapPin size={14} />
           <span>台北市 · 內湖區</span>
         </div>
       </div>
@@ -63,7 +63,7 @@ export default function AboutPage() {
         </div>
 
         {/* 文字 */}
-        <div className="text-warm-700 space-y-5 leading-relaxed md:col-span-3">
+        <div className="text-warm-700 flex flex-col items-center justify-center space-y-5 leading-relaxed md:col-span-3">
           <p>
             在新創公司的工作經驗，讓我培養出快速迭代、注重效能優化的工作方式。
             我習慣在開發前先理解商業需求，不只是「把功能做出來」，更在意產品能否真正解決用戶痛點。
@@ -72,11 +72,6 @@ export default function AboutPage() {
             對於React及其相關生態系有一定了解，包含Redux、Next.Js、Vite及TypeScript等。
             專注於提升使用者體驗、減少網頁渲染次數、提升組件互通性。
             樂於使用不同技術，用以提升前端技能樹，像最近正在學習使用docker等。
-          </p>
-          <p>
-            在團隊中，願意積極溝通，協調設計與後端，促使產品能在期限內上線。
-            <br />
-            如何正確與他人溝通亦成為了重要課題
           </p>
         </div>
       </div>

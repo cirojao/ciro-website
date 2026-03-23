@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Github, ExternalLink } from "lucide-react";
+import { SiGithub } from "react-icons/si";
+import { LuExternalLink } from "react-icons/lu";
 
 export const metadata: Metadata = {
   title: "Projects | Ciro",
@@ -127,7 +128,7 @@ export default function ProjectsPage() {
                       rel="noopener noreferrer"
                       className="border-warm-300 text-warm-500 hover:text-espresso hover:border-warm-500 flex h-9 w-9 items-center justify-center rounded-full border transition-all"
                     >
-                      <Github size={16} />
+                      <SiGithub size={16} />
                     </a>
                     <a
                       href={project.demo}
@@ -135,7 +136,7 @@ export default function ProjectsPage() {
                       rel="noopener noreferrer"
                       className="border-warm-300 text-warm-500 hover:text-espresso hover:border-warm-500 flex h-9 w-9 items-center justify-center rounded-full border transition-all"
                     >
-                      <ExternalLink size={16} />
+                      <LuExternalLink size={16} />
                     </a>
                   </div>
                 </div>

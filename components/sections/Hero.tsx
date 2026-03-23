@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowDown } from "lucide-react";
+import { LuArrowDown } from "react-icons/lu";
 
 // 共用動畫 variants
 const fadeUp = {
@@ -164,7 +164,7 @@ export default function Hero() {
           <span className="font-mono text-xs tracking-widest uppercase">
             scroll
           </span>
-          <ArrowDown size={16} />
+          <LuArrowDown size={16} />
         </motion.div>
       </motion.div>
     </section>

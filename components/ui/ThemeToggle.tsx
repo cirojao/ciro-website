@@ -1,8 +1,8 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { Moon, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { LuMoon, LuSun } from "react-icons/lu";
 
 // 訂閱函式：外部狀態變化時通知 React
 function subscribe(callback: () => void) {
@@ -50,7 +50,7 @@ export default function ThemeToggle() {
           transition={{ duration: 0.18 }}
           className="block"
         >
-          {dark ? <Moon size={16} /> : <Sun size={16} />}
+          {dark ? <LuMoon size={16} /> : <LuSun size={16} />}
         </motion.span>
       </AnimatePresence>
     </button>
