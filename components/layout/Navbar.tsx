@@ -15,10 +15,16 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+function normalizePath(path: string) {
+  if (path === "/") return "/";
+  return path.replace(/\/+$/, "");
+}
+
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const normalizedPathname = normalizePath(pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -49,7 +55,7 @@ export default function Navbar() {
         {/* 桌面選單 */}
         <ul className="hidden items-center gap-2 md:flex">
           {navLinks.map(({ href, label }) => {
-            const active = pathname === href;
+            const active = normalizedPathname === normalizePath(href);
             return (
               <li key={href} className="px-4 py-2">
                 <Link
@@ -123,7 +129,7 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-1 px-6 py-4">
               {navLinks.map(({ href, label }, i) => {
-                const active = pathname === href;
+                const active = normalizedPathname === normalizePath(href);
                 return (
                   <motion.div
                     key={href}
