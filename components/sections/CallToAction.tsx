@@ -36,7 +36,7 @@ export default function CallToAction() {
                 />
               </Link>
               <a
-                href="/Ciro_履歷表.pdf"
+                href="/Ciro_Resume.pdf"
                 download
                 className="border-warm-300 hover:border-warm-500 text-warm-700 hover:text-espresso hover:bg-warm-50 inline-flex items-center justify-center gap-2 rounded-full border px-8 py-3.5 font-medium transition-all duration-200"
               >
