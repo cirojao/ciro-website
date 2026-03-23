@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SmoothScroll from "@/components/ui/SmoothScroll";
+import CursorDot from "@/components/ui/CursorDot";
 
 export const metadata: Metadata = {
   title: "Ciro | Frontend Engineer",
@@ -47,7 +49,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen bg-cream flex flex-col dark scrollbar-hidden">
+      <body className="bg-cream dark scrollbar-hidden flex min-h-screen flex-col">
+        <SmoothScroll />
+        <CursorDot />
         <div className="texture-overlay" />
         <Navbar />
         <main className="flex-1">{children}</main>

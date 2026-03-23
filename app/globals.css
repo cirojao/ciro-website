@@ -106,6 +106,29 @@ body {
     color 0.3s ease;
 }
 
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(-100px, -100px, 0);
+  transition:
+    opacity 0.2s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1.5px solid var(--color-espresso);
+  background: transparent;
+}
+
+html.dark .cursor-dot {
+  border-color: var(--color-warm-900);
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -130,5 +153,11 @@ body {
 
   .scrollbar-hidden::-webkit-scrollbar {
     display: none; /* Chrome / Safari */
+  }
+}
+
+@media (pointer: coarse) {
+  .cursor-dot {
+    display: none;
   }
 }
