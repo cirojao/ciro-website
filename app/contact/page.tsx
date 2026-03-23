@@ -73,7 +73,7 @@ export default function ContactPage() {
         {/* 社群連結 */}
         <div className="space-y-4 md:col-span-2">
           <h2 className="font-display text-espresso mb-6 text-xl font-semibold">
-            找到我
+            聯絡方式
           </h2>
           {socials.map(({ icon: Icon, href, label, user }) => (
             <a
