@@ -4,19 +4,19 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    period: "2023 — 現在",
+    period: "2023/11 — 現在",
     role: "前端工程師",
     company: "喜馬拉雅科技有限公司",
     desc: "負責主導前端架構升級，將舊有 CSR 專案遷移至 Next.js 14 App Router；負責多項產品開發，配合需求採用不同技術棧",
     tags: ["Next.js", "React", "TypeScript", "Tailwind", "Vite", "Firebase"],
   },
-  // {
-  //   period: "2020 — 2022",
-  //   role: "前端工程師",
-  //   company: "StartupXYZ",
-  //   desc: "從零打造 B2B SaaS 前端，導入 TanStack Query 狀態管理，減少 60% 重複請求。",
-  //   tags: ["React", "TanStack Query", "Chakra UI"],
-  // },
+  {
+    period: "2023/04 — 2023/10",
+    role: "前端工程師培訓班",
+    company: "iSpan資展國際（前身為資策會）",
+    desc: "從零開始接觸前端，包含基礎知識以及實務應用",
+    tags: ["React", "Javascript", "HTML", "CSS", "Next.js"],
+  },
 
   {
     period: "2021 — 2023",
