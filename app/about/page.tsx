@@ -63,15 +63,20 @@ export default function AboutPage() {
         </div>
 
         {/* 文字 */}
-        <div className="text-warm-700 flex flex-col items-center justify-center space-y-5 leading-relaxed md:col-span-3">
+        <div className="text-warm-700 flex flex-col items-start justify-center space-y-5 leading-relaxed md:col-span-3">
           <p>
-            在新創公司的工作經驗，讓我培養出快速迭代、注重效能優化的工作方式。
-            我習慣在開發前先理解商業需求，不只是「把功能做出來」，更在意產品能否真正解決用戶痛點。
+            2+ 年經驗前端工程師，專注於 React
+            生態（Next.js、TypeScript），具備電商專案開發與效能優化經驗。
+          </p>
+          <p>曾透過減少不必要渲染與優化資料流，提升頁面效能與使用者體驗。</p>
+          <p>
+            熟悉 GraphQL / RESTful API 串接，並具備 Firebase 與 GCP
+            部署經驗，能獨立完成從開發到上線的流程。
           </p>
           <p>
-            對於React及其相關生態系有一定了解，包含Redux、Next.Js、Vite及TypeScript等。
-            專注於提升使用者體驗、減少網頁渲染次數、提升組件互通性。
-            樂於使用不同技術，用以提升前端技能樹，像最近正在學習使用docker等。
+            具備前端架構設計與技術選型能力，能依據專案需求（如
+            SEO、首屏效能、系統性質）評估採用 Vite 或 Next.js，並規劃 CSR、SSR
+            或混合渲染策略，以兼顧開發效率與使用者體驗。
           </p>
         </div>
       </div>

@@ -21,7 +21,7 @@ type Project = {
   sideProjects: boolean;
   image?: string;
   icon?: IconType;
-  desc: string;
+  desc: any;
   tags: string[];
   highlights: string[];
   github: string;
@@ -36,7 +36,24 @@ const projects: Project[] = [
     type: "前端應用",
     sideProjects: false,
     image: "/images/aplogo.png",
-    desc: "為公司打造的體育平台，包含即時動畫顯示、時間篩選聯賽或賽事資訊以及購物車功能。",
+    desc: (
+      <>
+        <li>
+          根據不同 API
+          回傳格式與狀態設計對應的錯誤處理與資料顯示機制，提升前端資料整合穩定性與使用者操作體驗。
+        </li>
+        <li>
+          優化桌機與手機版操作流程，提升不同裝置上的瀏覽體驗與介面一致性。
+        </li>
+        <li>
+          實作特殊格式回應資料解析機制，提升前端處理複雜資料來源的穩定性與整合效率。
+        </li>
+        <li>
+          串接外部 API 與登入授權流程，處理 token
+          傳遞、資料請求設定與前端狀態同步。
+        </li>
+      </>
+    ),
     tags: [
       "React",
       "TypeScript",
@@ -60,7 +77,13 @@ const projects: Project[] = [
     type: "前端應用",
     sideProjects: false,
     image: "/images/bklogo.png",
-    desc: "野獸國打造的會員系統，包含基本資料更新及優惠券兌換功能。利用GCP cloud run trigger 監聽github上的main分支，自動部署更新。",
+    desc: (
+      <>
+        <li>使用 React 建立會員系統，串接 API 完成註冊、登入流程</li>
+        <li>處理表單驗證與錯誤狀態，提升使用者操作體驗</li>
+        <li>管理使用者狀態與登入流程（token / auth flow）</li>
+      </>
+    ),
     tags: ["Next.js", "Tailwind CSS", "MUI", "useContext", "GCP Cloud Run"],
     highlights: ["會員資料與優惠券流程", "自動部署流程串接", "商務功能落地"],
     github: "",
@@ -71,7 +94,13 @@ const projects: Project[] = [
     id: "lobby",
     title: "Betigo",
     period: "2025",
-    desc: "簡易遊戲大廳，提供各項遊戲入口等",
+    desc: (
+      <>
+        <li>使用 React 建立遊戲大廳介面，整合多個遊戲入口與共用版型</li>
+        <li>串接 Firebase Authentication 與資料查詢流程，處理登入狀態與頁面切換邏輯</li>
+        <li>優化大廳導覽與元件拆分方式，提升維護性與使用者操作流暢度</li>
+      </>
+    ),
     tags: [
       "React",
       "Vite",
@@ -93,7 +122,13 @@ const projects: Project[] = [
     type: "前端應用",
     sideProjects: false,
     image: "/images/quispaylogo.svg",
-    desc: "虛擬貨幣錢包提供資訊、入金、交易記錄等功能",
+    desc: (
+      <>
+        <li>使用 React 建構虛擬貨幣錢包前端介面，整合帳戶資訊與交易資料顯示流程</li>
+        <li>串接 API 處理入金與交易記錄查詢，整理資料狀態與頁面互動邏輯</li>
+        <li>結合 shadcn/ui 與 Tailwind 建立一致的元件樣式，提升介面開發效率與維護性</li>
+      </>
+    ),
     tags: ["React", "Vite", "shadcn/ui", "TanStack Query", "Tailwind"],
     highlights: [
       "錢包資訊與交易紀錄",
@@ -110,7 +145,13 @@ const projects: Project[] = [
     type: "前端應用",
     sideProjects: true,
     icon: BiCricketBall,
-    desc: "使用 mock API/WebSocket 模擬即時報價變動的遊戲平台",
+    desc: (
+      <>
+        <li>使用 React 建立遊戲平台介面，模擬即時報價與互動式資料更新情境</li>
+        <li>透過 mock API 與 WebSocket 實作前端資料流，練習即時狀態同步與事件處理</li>
+        <li>拆分可重用元件與畫面邏輯，提升專案結構清晰度與後續擴充彈性</li>
+      </>
+    ),
     tags: [
       "React",
       "JavaScript",
@@ -219,9 +260,9 @@ export default function ProjectsPage() {
                   </div>
                 </div>
 
-                <p className="text-warm-600 mb-4 text-sm leading-relaxed">
+                <ul className="text-warm-600 mb-4 list-disc space-y-1 pl-5 text-sm leading-relaxed">
                   {project.desc}
-                </p>
+                </ul>
 
                 {/* 亮點 */}
                 <div className="mb-4 flex flex-wrap gap-2">
