@@ -46,7 +46,7 @@ export default function AboutPage() {
           <div className="relative">
             <div className="from-warm-200 to-sand-300 shadow-warm-lg flex aspect-square items-center justify-center rounded-3xl bg-gradient-to-br text-8xl">
               <Image
-                src={"/images/ciro.png"}
+                src={"/images/ciro_bg.png"}
                 width={200}
                 height={200}
                 alt="ciro"

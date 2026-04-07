@@ -160,7 +160,7 @@ export default function ProjectsPage() {
                   />
                 ) : (
                   <Image
-                    src={project.image ?? "/images/ciro.png"}
+                    src={project.image ?? "/images/ciro_bg.png"}
                     alt={`${project.title} logo`}
                     width={88}
                     height={88}

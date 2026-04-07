@@ -145,7 +145,7 @@ export default function Hero() {
           transition={{ duration: 0.65, ease: "easeOut" }}
           className="h-50 w-50"
         >
-          <Image src={"/images/ciro.png"} width={200} height={200} alt="ciro" />
+          <Image src={"/images/ciro_bg.png"} width={200} height={200} alt="ciro" />
         </motion.div>
       </motion.div>
 
