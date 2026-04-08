@@ -47,7 +47,7 @@ export default function Hero() {
         className="mx-10 flex h-full w-full flex-col-reverse items-center justify-center gap-12 md:flex-row md:items-start md:gap-20"
       >
         <motion.div
-          className="relative z-10 max-w-5xl text-center md:text-start"
+          className="relative z-10 max-w-5xl py-5 text-center md:text-start"
           variants={stagger}
           initial="hidden"
           animate="show"
@@ -93,7 +93,7 @@ export default function Hero() {
           <motion.div
             variants={fadeUp}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="mb-10 flex flex-wrap justify-center gap-2"
+            className="flex flex-wrap justify-center gap-2"
           >
             {["React", "Next.js", "TypeScript", "Tailwind CSS", "Vite"].map(
               (tech) => (
@@ -143,7 +143,7 @@ export default function Hero() {
         <motion.div
           variants={fadeUp}
           transition={{ duration: 0.65, ease: "easeOut" }}
-          className="h-50 w-50"
+          className="h-fit w-50"
         >
           <Image
             src={"/images/ciro_bg.png"}
