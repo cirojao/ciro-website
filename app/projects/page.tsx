@@ -4,10 +4,16 @@ import type { IconType } from "react-icons";
 import { BiCricketBall } from "react-icons/bi";
 import { SiGithub } from "react-icons/si";
 import { LuExternalLink } from "react-icons/lu";
+import JsonLd from "@/components/seo/JsonLd";
+import { getCanonicalPath } from "@/lib/site";
+import { getProjectsPageStructuredData } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Projects | Ciro",
   description: "Ciro的前端開發作品集",
+  alternates: {
+    canonical: getCanonicalPath("/projects"),
+  },
 };
 
 const lightProjectGradient = "from-warm-50 to-warm-200";
@@ -171,128 +177,140 @@ const projects: Project[] = [
 ];
 
 export default function ProjectsPage() {
+  const projectsStructuredData = getProjectsPageStructuredData(
+    projects.map((project) => ({
+      title: project.title,
+      description: project.highlights.join("、"),
+      tags: project.tags,
+      url: project.demo || project.github || undefined,
+    })),
+  );
+
   return (
-    <div className="mx-auto max-w-5xl px-6 pt-24 pb-16">
-      {/* 頁首 */}
-      <div className="mb-16">
-        <h1 className="font-display text-espresso text-5xl font-bold md:text-6xl">
-          Projects
-        </h1>
-      </div>
+    <>
+      <JsonLd data={projectsStructuredData} />
+      <div className="mx-auto max-w-5xl px-6 pt-24 pb-16">
+        {/* 頁首 */}
+        <div className="mb-16">
+          <h1 className="font-display text-espresso text-5xl font-bold md:text-6xl">
+            Projects
+          </h1>
+        </div>
 
-      {/* 專案列表 */}
-      <div className="space-y-8">
-        {projects.map((project, index) => (
-          <article
-            id={project.id}
-            key={project.id}
-            className="group bg-warm-50 border-warm-200 hover:border-warm-400 hover:shadow-warm-lg overflow-hidden rounded-3xl border transition-all duration-300"
-          >
-            <div className="flex flex-col md:flex-row">
-              {/* 左側色塊 */}
-              <div
-                className={`h-40 bg-linear-to-br md:h-auto md:w-56 ${index % 2 === 0 ? lightProjectGradient : darkProjectGradient} flex shrink-0 items-center justify-center text-6xl`}
-              >
-                {project.icon ? (
-                  <project.icon
-                    size={88}
-                    className="text-espresso/80"
-                    aria-hidden="true"
-                  />
-                ) : (
-                  <Image
-                    src={project.image ?? "/images/ciro_bg.png"}
-                    alt={`${project.title} logo`}
-                    width={88}
-                    height={88}
-                    className="h-auto max-h-24 w-auto max-w-[140px] object-contain"
-                  />
-                )}
-              </div>
+        {/* 專案列表 */}
+        <div className="space-y-8">
+          {projects.map((project, index) => (
+            <article
+              id={project.id}
+              key={project.id}
+              className="group bg-warm-50 border-warm-200 hover:border-warm-400 hover:shadow-warm-lg overflow-hidden rounded-3xl border transition-all duration-300"
+            >
+              <div className="flex flex-col md:flex-row">
+                {/* 左側色塊 */}
+                <div
+                  className={`h-40 bg-linear-to-br md:h-auto md:w-56 ${index % 2 === 0 ? lightProjectGradient : darkProjectGradient} flex shrink-0 items-center justify-center text-6xl`}
+                >
+                  {project.icon ? (
+                    <project.icon
+                      size={88}
+                      className="text-espresso/80"
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    <Image
+                      src={project.image ?? "/images/ciro_bg.png"}
+                      alt={`${project.title} logo`}
+                      width={88}
+                      height={88}
+                      className="h-auto max-h-24 w-auto max-w-[140px] object-contain"
+                    />
+                  )}
+                </div>
 
-              {/* 內容 */}
-              <div className="flex-1 p-6 md:p-8">
-                <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
-                  <div>
-                    <div className="mb-1 flex items-center gap-2">
-                      {project.sideProjects ? (
-                        <>
-                          <span className="bg-espresso text-cream border-espresso rounded-full border px-2 py-0.5 font-mono text-[10px] tracking-wide uppercase">
-                            Side Project
-                          </span>
-                          <span className="text-warm-300">·</span>
-                        </>
-                      ) : null}
-                      <span className="text-warm-500 font-mono text-xs tracking-wider uppercase">
-                        {project.type}
-                      </span>
-                      <span className="text-warm-300">·</span>
-                      <span className="text-warm-400 font-mono text-xs">
-                        {project.period}
-                      </span>
+                {/* 內容 */}
+                <div className="flex-1 p-6 md:p-8">
+                  <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <div className="mb-1 flex items-center gap-2">
+                        {project.sideProjects ? (
+                          <>
+                            <span className="bg-espresso text-cream border-espresso rounded-full border px-2 py-0.5 font-mono text-[10px] tracking-wide uppercase">
+                              Side Project
+                            </span>
+                            <span className="text-warm-300">·</span>
+                          </>
+                        ) : null}
+                        <span className="text-warm-500 font-mono text-xs tracking-wider uppercase">
+                          {project.type}
+                        </span>
+                        <span className="text-warm-300">·</span>
+                        <span className="text-warm-400 font-mono text-xs">
+                          {project.period}
+                        </span>
+                      </div>
+                      <h2 className="font-display text-espresso group-hover:text-warm-600 text-2xl font-bold transition-colors">
+                        {project.title}
+                      </h2>
                     </div>
-                    <h2 className="font-display text-espresso group-hover:text-warm-600 text-2xl font-bold transition-colors">
-                      {project.title}
-                    </h2>
+
+                    <div className="flex items-center gap-2">
+                      {project.github ? (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="border-warm-300 text-warm-500 hover:text-espresso hover:border-warm-500 flex h-9 w-9 items-center justify-center rounded-full border transition-all"
+                        >
+                          <SiGithub size={16} />
+                        </a>
+                      ) : null}
+                      {project.demo ? (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="border-warm-300 text-warm-500 hover:text-espresso hover:border-warm-500 flex h-9 w-9 items-center justify-center rounded-full border transition-all"
+                        >
+                          <LuExternalLink size={16} />
+                        </a>
+                      ) : null}
+                    </div>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    {project.github ? (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="border-warm-300 text-warm-500 hover:text-espresso hover:border-warm-500 flex h-9 w-9 items-center justify-center rounded-full border transition-all"
+                  <ul className="text-warm-600 mb-4 list-disc space-y-1 pl-5 text-sm leading-relaxed">
+                    {project.desc}
+                  </ul>
+
+                  {/* 亮點 */}
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {project.highlights.map((h) => (
+                      <span
+                        key={h}
+                        className="text-warm-600 bg-warm-100 border-warm-200 flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs"
                       >
-                        <SiGithub size={16} />
-                      </a>
-                    ) : null}
-                    {project.demo ? (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="border-warm-300 text-warm-500 hover:text-espresso hover:border-warm-500 flex h-9 w-9 items-center justify-center rounded-full border transition-all"
-                      >
-                        <LuExternalLink size={16} />
-                      </a>
-                    ) : null}
+                        <span className="bg-warm-400 h-1.5 w-1.5 rounded-full" />
+                        {h}
+                      </span>
+                    ))}
                   </div>
-                </div>
 
-                <ul className="text-warm-600 mb-4 list-disc space-y-1 pl-5 text-sm leading-relaxed">
-                  {project.desc}
-                </ul>
-
-                {/* 亮點 */}
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {project.highlights.map((h) => (
-                    <span
-                      key={h}
-                      className="text-warm-600 bg-warm-100 border-warm-200 flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs"
-                    >
-                      <span className="bg-warm-400 h-1.5 w-1.5 rounded-full" />
-                      {h}
-                    </span>
-                  ))}
-                </div>
-
-                {/* 技術標籤 */}
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-warm-200 text-warm-700 rounded-full px-2.5 py-0.5 font-mono text-xs"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {/* 技術標籤 */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-warm-200 text-warm-700 rounded-full px-2.5 py-0.5 font-mono text-xs"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

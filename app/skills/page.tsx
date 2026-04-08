@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { getCanonicalPath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Tech Stacks | Ciro",
   description: "Ciro的前端技術能力總覽",
+  alternates: {
+    canonical: getCanonicalPath("/skills"),
+  },
 };
 
 const skillGroups = [
