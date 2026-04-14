@@ -9,8 +9,8 @@ import { getCanonicalPath } from "@/lib/site";
 import { getProjectsPageStructuredData } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Projects | Ciro",
-  description: "Ciro的前端開發作品集",
+  title: "Projects | Ciro Jao",
+  description: "Ciro Jao 的前端開發作品集",
   alternates: {
     canonical: getCanonicalPath("/projects"),
   },

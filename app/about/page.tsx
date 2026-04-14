@@ -6,8 +6,8 @@ import { getCanonicalPath } from "@/lib/site";
 import { getAboutPageStructuredData } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "About | Ciro",
-  description: "Ciro的背景、興趣與工作哲學",
+  title: "About | Ciro Jao",
+  description: "Ciro Jao 的背景、興趣與工作哲學",
   alternates: {
     canonical: getCanonicalPath("/about"),
   },

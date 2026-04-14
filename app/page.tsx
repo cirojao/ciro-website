@@ -7,7 +7,7 @@ import CallToAction from "@/components/sections/CallToAction";
 import { getCanonicalPath } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Ciro | Frontend Engineer",
+  title: "Ciro Jao | Frontend Engineer",
   description:
     "Ciro Jao 的前端工程師作品集，專注 React、Next.js、TypeScript 與使用者體驗優化。",
   alternates: {

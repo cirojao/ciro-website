@@ -21,7 +21,7 @@ const socialImage = {
 
 export const metadata: Metadata = {
   metadataBase: siteOrigin,
-  title: "Ciro | Frontend Engineer",
+  title: "Ciro Jao | Frontend Engineer",
   description: "專注於打造流暢、優雅使用者體驗的前端工程師",
   keywords: [
     "前端工程師",
@@ -30,22 +30,22 @@ export const metadata: Metadata = {
     "TypeScript",
     "Frontend Developer",
   ],
-  authors: [{ name: "Ciro" }],
+  authors: [{ name: "Ciro Jao" }],
   alternates: {
     canonical: getCanonicalPath("/"),
   },
   openGraph: {
-    title: "Ciro — Frontend Engineer",
+    title: "Ciro Jao — Frontend Engineer",
     description: "專注於打造流暢、優雅使用者體驗的前端工程師",
     type: "website",
     url: getCanonicalPath("/"),
-    siteName: "Ciro",
+    siteName: "Ciro Jao",
     locale: "zh_TW",
     images: [socialImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ciro — Frontend Engineer",
+    title: "Ciro Jao — Frontend Engineer",
     description: "專注於打造流暢、優雅使用者體驗的前端工程師",
     images: [socialImage.url],
   },
