@@ -1,4 +1,4 @@
-const DEFAULT_SITE_URL = "https://ciro-profile-b0117.firebaseapp.com";
+const DEFAULT_SITE_URL = "https://ciro-profile-b0117.web.app";
 
 function normalizeSiteUrl(url: string) {
   return url.endsWith("/") ? url.slice(0, -1) : url;
